@@ -9,17 +9,27 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    // MARK: - Properties
+    private var database = Database()
 
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
+        // prepare database
+        database.prepareDatabase()
+        
     }
 
     // MARK: - UI Actions
     @IBAction func generateDB(_ sender: Any) {
         let cities = readJSONFromFile(fileName: "cidades")
-        print("🎁 cities: \(cities)")
+        
+        for city in cities {
+            database.addCity(city)
+        }
+        print("**** database added")
     }
     
     

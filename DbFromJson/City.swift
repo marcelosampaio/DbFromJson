@@ -13,7 +13,7 @@ import Foundation
 /* For support, please feel free to contact me at https://www.linkedin.com/in/syedabsar */
 
 public class City {
-	public var iD : String?
+	public var id : String?
 	public var nome : String?
 	public var estado : String?
 
@@ -49,7 +49,7 @@ public class City {
 */
 	required public init?(dictionary: NSDictionary) {
 
-		iD = dictionary["ID"] as? String
+		id = dictionary["ID"] as? String
 		nome = dictionary["Nome"] as? String
 		estado = dictionary["Estado"] as? String
 	}
@@ -64,7 +64,7 @@ public class City {
 
 		let dictionary = NSMutableDictionary()
 
-		dictionary.setValue(self.iD, forKey: "ID")
+		dictionary.setValue(self.id, forKey: "ID")
 		dictionary.setValue(self.nome, forKey: "Nome")
 		dictionary.setValue(self.estado, forKey: "Estado")
 
